@@ -33,3 +33,55 @@ let queryArr =   ["aba", "xzxb", "ab"]
 let result = matchingStrings(strings: strArr, queries: queryArr)
 print(result)
 
+// Enum with raw value and switch statement
+enum Direction: String {
+    case north = "north"
+    case west  = "west"
+    case east  = "east"
+    case south = "south"
+}
+
+let findCharcter = Direction.south
+var description = ""
+
+
+switch findCharcter {
+case .east:
+    description += findCharcter.rawValue
+    
+case .north:
+    description += findCharcter.rawValue
+    
+case .west:
+    description += findCharcter.rawValue
+    
+    default:
+      break
+}
+
+print("DescriptionValue is: \(description)")
+
+// Write a closue for addition two values
+
+let addClousure:((Int, Int) -> Int) =  { (a, b) in
+    
+    return a + b
+}
+
+print("add: \(addClousure( 3 , 2))")
+
+
+let additionClosure = { (a: Int, b: Int) -> Int in
+    return a + b
+}
+
+let anresult = additionClosure(5,8)
+print("anresult res: \(anresult)")
+
+
+// Generics
+func print<T>(array: [T]) {
+  print(array.map { $0 })
+}
+
+print([1, 2, 3])
